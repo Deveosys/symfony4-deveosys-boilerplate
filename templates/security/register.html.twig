@@ -1,0 +1,73 @@
+{% extends 'security/security-base.html.twig' %}
+
+{% form_theme registrationForm _self %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block securityForm %}
+  <div class="uk-margin uk-text-center">
+    <h1>Inscription</h1>
+  </div>
+
+  {{ form_start(registrationForm) }}
+
+  <fieldset class="uk-fieldset">
+    {# EMAIL #}
+    <div class="uk-margin">
+      <div class="uk-inline uk-width-1-1">
+        <span class="uk-form-icon uk-form-icon-flip uk-icon" data-uk-icon="icon: user"></span>
+        {# <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="uk-input uk-border-pill" required="required" autofocus="autofocus" placeholder="Email"> #}
+        {{ form_widget(registrationForm.displayName) }}
+      </div>
+      {{ form_errors(registrationForm.displayName) }}
+    </div>
+
+    <div class="uk-margin">
+      <div class="uk-inline uk-width-1-1">
+        <span class="uk-form-icon uk-form-icon-flip uk-icon" data-uk-icon="icon: mail"></span>
+        {# <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="uk-input uk-border-pill" required="required" autofocus="autofocus" placeholder="Email"> #}
+        {{ form_widget(registrationForm.email) }}
+      </div>
+      {{ form_errors(registrationForm.email) }}
+    </div>
+
+    <div class="uk-margin">
+      <div class="uk-inline uk-width-1-1">
+        <span class="uk-form-icon uk-form-icon-flip uk-icon" data-uk-icon="icon: lock"></span>
+        {# <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="uk-input uk-border-pill" required="required" autofocus="autofocus" placeholder="Email"> #}
+        {{ form_widget(registrationForm.plainPassword) }}
+      </div>
+      {{ form_errors(registrationForm.plainPassword) }}
+    </div>
+  </fieldset>
+
+  <div class="uk-margin">
+    <button type="submit" class="uk-button uk-button-primary uk-border-pill uk-width-1-1">Inscription</button>
+  </div>
+
+  {{ form_end(registrationForm) }}
+
+  <div class="uk-text-center">
+    <a class="uk-link-reset uk-text-small" href="{{ path('app_login')}}">Déjà inscrit ? Connecte toi!</a>
+  </div>
+{% endblock %}
+
+{% block form_errors %}
+  {% if errors | length > 0 %}
+    {% if compound %}
+      {# ... display the global form errors #}
+      <ul>
+        {% for error in errors %}
+          <li>{{ error.message }}</li>
+        {% endfor %}
+      </ul>
+    {% else %}
+      {% for error in errors %}
+        <p class="uk-margin-remove uk-text-small uk-text-danger">
+          -
+          {{ error.message }}
+        </p>
+      {% endfor %}
+    {% endif %}
+  {% endif %}
+{% endblock form_errors %}

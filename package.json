@@ -1,0 +1,22 @@
+{
+  "devDependencies": {
+    "@symfony/webpack-encore": "^0.24.0",
+    "@types/uikit": "^2.27.7",
+    "jquery": "^3.3.1",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.0.1",
+    "ts-loader": "^5.3.0",
+    "typescript": "^3.3.4000",
+    "uikit": "^3.0.3",
+    "webpack-notifier": "^1.6.0"
+  },
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev-server": "encore dev-server",
+    "dev": "encore dev",
+    "watch": "encore dev --watch",
+    "build": "encore production --progress"
+  },
+  "dependencies": {}
+}

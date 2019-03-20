@@ -1,0 +1,2 @@
+'Invalid credentials.': 'Invalid credentials.'
+'Your password should be at least {{ limit }} characters': 'Your password should be at least {{ limit }} characters'

@@ -1,0 +1,65 @@
+{% extends 'security/security-base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block securityForm %}
+
+  <div class="uk-text-center uk-margin">
+    <h1>Connexion</h1>
+  </div>
+
+  <form method="post">
+
+    {% if error %}
+      <div class="uk-text-center uk-text-small uk-text-danger uk-margin-small-bottom">
+        {{ error.messageKey|trans(error.messageData, 'security') }}
+      </div>
+    {% endif %}
+
+    <fieldset class="uk-fieldset">
+
+      {# EMAIL #}
+      <div class="uk-margin">
+        <div class="uk-inline uk-width-1-1">
+          <span class="uk-form-icon uk-form-icon-flip uk-icon" data-uk-icon="icon: user"></span>
+          <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="uk-input uk-border-pill" required="required" autofocus="autofocus" placeholder="Email">
+        </div>
+      </div>
+
+      {# PASSWORD #}
+      <div class="uk-margin">
+        <div class="uk-inline uk-width-1-1">
+          <span class="uk-form-icon uk-form-icon-flip uk-icon" data-uk-icon="icon: lock"></span>
+          <input type="password" name="password" id="inputPassword" class="uk-input uk-border-pill" required="required" placeholder="Password">
+        </div>
+      </div>
+
+      {# REMEMBER ME #}
+      <div class="">
+        <label class="uk-text-small">
+          <input class="uk-checkbox" type="checkbox" name="_remember_me">
+          Se souvenir de moi
+        </label>
+      </div>
+
+    </fieldset>
+    <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+    {#
+        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+        See https://symfony.com/doc/current/security/remember_me.html
+
+
+    #}
+
+    <div class="uk-margin">
+      <button type="submit" class="uk-button uk-button-primary uk-border-pill uk-width-1-1">Connexion</button>
+    </div>
+
+  </form>
+
+  <div class="uk-text-center">
+    <a class="uk-link-reset uk-text-small" href="{{ path('app_register')}}">Créer un compte</a>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+<div id="main-nav" class="uk-box-shadow-medium" uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky;">
+
+  <div class="uk-container">
+
+    <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar="uk-navbar">
+      <div class="uk-navbar-left">
+        <ul class="uk-navbar-nav">
+          <li>
+            <a href="{{ path('app_homepage')}}">Deveosys</a>
+          </li>
+
+        </ul>
+      </div>
+      <div class="uk-navbar-right">
+        <ul class="uk-navbar-nav">
+
+          <li>
+            <a href="{{ path('app_user_profile', { 'id': app.user.id}) }}">
+              <img src="https://picsum.photos/48/?image=1011" alt="Profile picture" class="uk-border-circle">
+            </a>
+            <div class="uk-navbar-dropdown" uk-dropdown="pos: bottom-justify">
+              <ul class="uk-nav uk-navbar-dropdown-nav">
+                <li>
+                  <a href="{{ path('app_user_profile', { 'id': app.user.id}) }}">
+                    <span uk-icon="icon: user;"></span>
+                    Profile</a>
+                </li>
+                <li class="uk-nav-divider"></li>
+                <li>
+                  <a href="{{ path('app_logout')}}">
+                    <span uk-icon="icon: sign-out;"></span>
+                    Log out
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
