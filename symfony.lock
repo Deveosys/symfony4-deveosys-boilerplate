@@ -111,6 +111,9 @@
     "ocramius/proxy-manager": {
         "version": "2.1.1"
     },
+    "php": {
+        "version": "7.4"
+    },
     "phpdocumentor/reflection-common": {
         "version": "1.0.1"
     },
@@ -278,6 +281,9 @@
             "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
         }
     },
+    "symfony/mime": {
+        "version": "v4.4.1"
+    },
     "symfony/monolog-bridge": {
         "version": "v4.2.3"
     },
@@ -322,6 +328,9 @@
     },
     "symfony/polyfill-intl-icu": {
         "version": "v1.10.0"
+    },
+    "symfony/polyfill-intl-idn": {
+        "version": "v1.13.1"
     },
     "symfony/polyfill-mbstring": {
         "version": "v1.10.0"
